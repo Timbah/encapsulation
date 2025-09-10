@@ -29,6 +29,13 @@ public class Printer {
         int numberOfSheets = (duplex) ? (pagesToPrint / 2) + (pagesToPrint % 2) : pagesToPrint;
         this.pagesPrinted += numberOfSheets;
 
-        return this.pagesPrinted;
+        if(duplex){
+            System.out.println("Printing in duplex mode");
+        }
+        return numberOfSheets;
+    }
+
+    public int getPagesPrinted() {
+        return pagesPrinted;
     }
 }
